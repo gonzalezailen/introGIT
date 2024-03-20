@@ -1,0 +1,97 @@
+*{
+padding: 0; margin: 0;
+ /*box-sizzing:border-box: */
+
+}
+:root{
+    --ancho80: 80%;
+    --ancho100: 100%;
+    --colorprimario: black;
+}
+/* ------------ORDENAMIENTO------------ */
+.dflex{
+    display:flex;
+}
+.centrar{
+    justify-content:center;
+    align-items:center;
+}
+
+
+/* --------------FIN ORDENAMIENTO--------------- */
+
+
+
+#contenedor{
+    
+    min-height: 100vh; /*vh: viewport height
+    -vw:viewport width*/ 
+    width: 100%;
+    background-color: lightgrey;
+    padding: 5px;
+}
+header{
+    height: 60px;
+    width:100%;
+    background-color: ED6A5A;
+    display: flex;/* FLEXBOX */
+    justify-content: space-between;
+    align-items:center;
+
+& .logo {
+    height: 30px; width: 100px;
+      background-color: red;
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+
+    & span:first-child{/*primero del mismo tipo*/
+        font-size:20pt;
+    }
+    & span:nth-child(2){
+        color:white;
+    }
+
+}
+& .botonera{
+    height: 30px;
+    & a{
+        text-decoration:none;
+        font-size:16pt;
+        padding: 5px 15px;
+        background-color:lightblue;
+        border-radius: 6px;
+    }
+    & a:hover{
+        box-shadow:-5px 5px 15px -5px black;
+
+    }
+}
+}
+
+main{
+    width: var(--ancho80);
+    margin: auto;
+}
+#banner{
+    height:200px;
+    width: 100%;
+    background-color:lightsalmon;
+}
+
+#descript{
+height:150px;
+width:100%;
+background-color: pink;
+}
+
+#article{
+    height: 300px;
+    width:100%;
+    background-color: lightgreen;
+}
+#nosotros{
+    height: 50px;
+    width:100%;
+    background-color: lightblue; 
+}
