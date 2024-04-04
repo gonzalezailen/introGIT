@@ -53,6 +53,7 @@ header{
     }
 
 }
+
 & .botonera{
     height: 30px;
     & a{
@@ -74,24 +75,93 @@ main{
     margin: auto;
 }
 #banner{
-    height:200px;
+    height:300px;
     width: 100%;
-    background-color:lightsalmon;
+    background-color:#C593B8;
+    position: relative;
+}
+.imagen{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+
+}
+.imagenbanner{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    & img{
+        height: 100%;
+        width: 100%;
+         object-fit: cover;
+    }
+}
+
+.texto{
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    background-color: burlywood;
+    padding: 5px;
 }
 
 #descript{
-height:150px;
+height:250px;
 width:100%;
-background-color: pink;
+color:  black;
+}
+
+.position_abs{
+    position: absolute;
+}
+.position_rel{
+    position: relative;
+}
+.blanco{
+    background-color: white;
+}
+.parrafo{
+    height: 100%;
+    
+}
+
+.parrafito{
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    right: 10px;
+    bottom: 10px;
+    background-color: yellow;
+  
+
+    & span{
+        position: absolute;
+        font-size: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: gray;
+        top: -5%;
+        left: -10%;
+    }
+    & span:nth-child(2){
+        color:green;
+        top: 80%;
+        left: 90%;
+        right: 100%;
+    }
 }
 
 #article{
     height: 300px;
     width:100%;
-    background-color: lightgreen;
+    background-color: #C593B8;
 }
 #nosotros{
     height: 50px;
     width:100%;
-    background-color: lightblue; 
+    background-color: pink; 
+}
+.ancho50{
+    height: 50px;
+    width:100%;
 }
