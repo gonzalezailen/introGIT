@@ -1,6 +1,7 @@
 *{
 padding: 0; margin: 0;
  /*box-sizzing:border-box: */
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 :root{
@@ -12,9 +13,20 @@ padding: 0; margin: 0;
 .dflex{
     display:flex;
 }
+.columna{
+    flex-direction: column;
+}
+
+.separar{
+    justify-content: space-between;
+}
+
 .centrar{
     justify-content:center;
     align-items:center;
+}
+.h50{
+    height: 45%;
 }
 
 
@@ -85,6 +97,7 @@ main{
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    background-color: red;
 
 }
 .imagenbanner{
@@ -132,7 +145,7 @@ color:  black;
     height: 80%;
     right: 10px;
     bottom: 10px;
-    background-color: yellow;
+
   
 
     & span{
@@ -140,21 +153,36 @@ color:  black;
         font-size: 100px;
         font-family: Arial, Helvetica, sans-serif;
         color: gray;
-        top: -5%;
-        left: -10%;
+        top: -15%;
+        left: -13%;
     }
     & span:nth-child(2){
         color:green;
-        top: 80%;
+        top: 70%;
         left: 90%;
         right: 100%;
     }
 }
-
+/*section articulos hace referncia a la seccion y no a la etiqueta*/
 #article{
-    height: 300px;
+    height: 400px;
     width:100%;
-    background-color: #C593B8;
+    background-color: #d8b88f;
+}
+
+.producto{
+    width: 25%;
+    height: 100%;
+    padding: 10px;
+    & .img_prod{
+    width: 100%;
+    height: 50%;
+    background-color:  #eedbc0;
+    }
+}
+
+.producto:nth-of-type(3){
+    background-color: white;
 }
 #nosotros{
     height: 50px;
@@ -162,6 +190,24 @@ color:  black;
     background-color: pink; 
 }
 .ancho50{
-    height: 50px;
-    width:100%;
+    height: 100%;
+    width:50%;
+}
+
+.btn {
+    border: solid 1px white;
+    background-color: transparent;
+    box-shadow: 0 0 15px 0 black;
+    width: 100%;
+    padding: 5px 5px;
+}
+
+.btn:hover {
+    background-color: white;
+    box-shadow: 0 5px 15px 0 black;
+}
+
+.btn:active {
+    background-color: rgb(120, 190, 108);
+    box-shadow: 0 5px 15px 0 black;
 }
