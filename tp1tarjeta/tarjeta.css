@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:cursive;
+}
+/*----------------COLORES-----------------*/
+.rojo{background-color: red;}
+.azul{background-color: blue;}
+.negro{background-color: black;}
+.blanco{background-color: white;}
+.verde{background-color: green;}
+/*-------------FIN COLORES----------------*/
+
+body{
+    /*vh que ocupe el 100% de la barra del navegador solo sirve en el body*/
+    height: 100vh;
+    width: 100;
+    background-color: #74EBD5;
+    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+    display: grid;
+    place-items: center;
+
+}
+
+.producto{
+    width: 400px;
+    height: 80%;
+    background-color: white;
+    /*primer 0 o parametro para desplazar la sombra en eje x, segundo 0 en el eje y tercero es para dar sombra 4 para dar tamaño a la sombra*/
+    box-shadow: 0 0 15px black;
+    border-radius: 14px;
+    overflow: hidden;
+    padding: 10px;
+
+    .header_prod{
+        border-radius: 5px 5px 0 0;
+        height: 40px;
+        width: 100%;
+        background-color: aqua;
+    }
+    .main_prod{
+        height: calc(100% - 40px);
+        width: 100%;
+        background-color: darkslateblue;
+        border-radius: 0px 0px 5px 5px;
+
+        .imagen_prod{
+            height: 60%;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: aqua;
+            align-items: center;
+
+            ul{
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                /*poner espacio entre objetos*/
+                gap: 10px;
+
+                li{
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 100%;
+                }
+            }
+            ul.talles li{
+                height: 40px;
+                width: 40px;
+                border: solid 2px black;
+                display: grid;
+                place-items: center;
+            }
+        }
+
+        .desc_prod{
+            height: 40%;
+            width: 100%;
+            background-color: antiquewhite;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            input[type=submit]{
+                width: 100%;
+                padding: 5px 10px;
+                border-radius: 14px;
+                cursor: pointer;
+                border: none;
+            }
+
+            input[type=submit]:hover{
+                background-color: gray;
+                color: white;
+            }
+
+
+        }
+
+    }
+}
+
