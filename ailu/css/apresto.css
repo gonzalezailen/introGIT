@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    /*list-style borra los items de las etiquetas <li> que se generan automaticamente*/
 }
 
 body {
@@ -34,6 +37,20 @@ body {
     --main-color: #3700b3;
     --secondary-color:#bb86fc;
 }
+.fit{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.degrade{
+    mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0), black);
+}
+.pa{position: absolute;}
+
+.pr{position: relative;}
+
+
 
 header{
     height: 60%;
@@ -188,6 +205,9 @@ main{
     justify-content: space-around;
     /*da el mismo espacio entre objetos y bordes*/
 }
+.centrar_v{
+    align-items: center;
+}
 
 .columna{
     flex-direction: column;
@@ -209,5 +229,99 @@ main{
     background-color: white;
     position: fixed;/*para que quede fijo*/
     bottom: 0;
-    padding: 20px;
+
+    .btn-link{
+         padding: 20px;
+        height: 100%;
+        flex: 1;
+        text-align: center;
+    }
+    .active{
+        font-weight: bold;
+    }
 }
+
+#portada_resto{
+    height: calc(100% - 60px);
+    background-color: #bb86fc;
+    .rate{
+        position: absolute;
+        font-size: 16pt;
+        font-weight: bold;
+        color: white;
+        background-color: var(--secondary-color);
+        padding: 8px;
+        border-radius:14px 0;
+        right: 15px;
+        top:340px;
+     
+    }
+    
+    .imagen_resto{
+        background-color: #6200ee;
+        height: 45%;
+    }
+    .desc_resto{
+        height: 55%;
+        background-color: white;
+        padding: 20px;
+        padding-top: 30px;
+
+        .tit_resto{
+            background-color: white;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    }
+}
+/*-------------menu html-------------*/
+
+#tit_menu{
+    width: 100%;
+    height:60px;
+    display: grid;
+    place-items: center;
+    background-color:white;
+}
+.cerrar{
+    position: absolute;
+    left: 20px;
+}
+.lista_menu{
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(221, 219, 219);
+}
+.item-menu{
+    height: 80px;
+    background-color: white;
+    display: flex;
+
+    .foto-item{
+        height: 80px;
+        width: 80px;
+        padding: 5px;
+    }
+    .desc-item{
+        padding: 10px;
+    }
+    .precio-item{
+        padding: 2px 5px;
+        background-color: #3700b3;
+        position: absolute;
+        right: -10px;
+        bottom: 10px;
+        border-radius: 10px 0;
+        position: absolute;
+        font-size: 8pt;
+        color: white;
+    }
+}
+.blanco-text{color: white!important;}
