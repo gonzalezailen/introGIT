@@ -1,0 +1,53 @@
+{ 
+  "soporte_cliente": {
+    "telefono": "1127834494",
+    "texto": "Soporte al cliente"
+  },
+  "menu": [
+    { "nombre": "Inicio", "enlace": "index.html" },
+    { "nombre": "Registrarse", "enlace": "login.html" },
+    { "nombre": "Catálogo", "enlace": "catalogo.html" },
+    { "nombre": "Comentá", "enlace": "comenta.html" },
+    { "nombre": "Información", "enlace": "comentarios.html" }
+  ],
+  "banner": {
+    "titulo": "Cafetería by ailu",
+    "descripcion": "100% Natural Café Fresco",
+    "enlace": "catalogo.html",
+    "texto_boton": "Comprar ahora"
+  },
+  "productos": [
+    { "id": 1, "nombre": "Café Americano", "precio": 2.5, "imagen": "img/cafe_americano.jpg" },
+    { "id": 2, "nombre": "Croissant", "precio": 1.5, "imagen": "img/croissant.jpg" }
+  ],
+  "contacto": {
+    "direccion": "Las Araucarias 2770 Tortuguitas",
+    "telefono": "123-456-7890",
+    "email": "gonzalezailen2005@gmail.com",
+    "redes_sociales": {
+      "facebook": "https://facebook.com/tu-pagina",
+      "twitter": "https://twitter.com/tu-pagina",
+      "youtube": "https://youtube.com/tu-pagina",
+      "pinterest": "https://pinterest.com/tu-pagina",
+      "instagram": "https://instagram.com/tu-pagina"
+    }
+  },
+  "informacion": [
+    { "titulo": "Acerca de Nosotros", "enlace": "#" },
+    { "titulo": "Información Delivery", "enlace": "#" },
+    { "titulo": "Políticas de Privacidad", "enlace": "#" },
+    { "titulo": "Términos y condiciones", "enlace": "#" },
+    { "titulo": "Contáctanos", "enlace": "#" }
+  ],
+  "mi_cuenta": [
+    { "titulo": "Mi cuenta", "enlace": "#" },
+    { "titulo": "Historial de órdenes", "enlace": "#" },
+    { "titulo": "Lista de deseos", "enlace": "#" },
+    { "titulo": "Boletín", "enlace": "#" },
+    { "titulo": "Reembolsos", "enlace": "#" }
+  ],
+  "boletin": {
+    "descripcion": "Siguenos en nuestra cuenta de instagram para más ofertas exclusivas @cafeteríaByailu."
+
+  }
+}

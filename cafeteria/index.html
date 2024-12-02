@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baristas</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <!-- Soporte al cliente -->
+                <div id="soporte-cliente" class="customer-support"></div>
+                <!-- Logo -->
+                <div class="container-logo">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <h1 class="logo"><a href="/">Baristas</a></h1>
+                </div>
+                <!-- Carrito -->
+                <div class="container-user">
+                    <i class="fa-solid fa-user" id="user-icon"></i>
+                    <div id="user-popup" class="user-popup"> <!-- Ventana emergente -->
+                        <span id="user-email"></span>
+                    </div>
+                    <!-- Icono del carrito -->
+                    <div class="carrito-icon" id="carrito-icon">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        <div class="content-shopping-cart">
+                            <span class="number"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Barra lateral para el carrito -->
+                <div id="sidebar" class="sidebar">
+                    <div class="sidebar-header">
+                        <h2>Tu Carrito</h2>
+                        <button id="close-sidebar" class="close-sidebar">&times;</button>
+                    </div>
+                    <div class="sidebar-content">
+                        <!-- Aquí se mostrarán los productos -->
+                        <p>No hay productos en el carrito.</p>
+                    </div>
+                </div>
+                
+
+
+            </div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul id="menu" class="menu">
+                    <!-- Menú dinámico -->
+                </ul>
+               
+            </nav>
+        </div>
+    </header>
+
+  
+   <!-- Banner -->
+<section class="banner">
+    <div id="banner" class="content-banner a">
+        
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container container-footer">
+        <div id="contacto" class="contact-info"></div>
+        <div id="informacion" class="information"></div>
+        <div id="mi-cuenta" class="my-account"></div>
+        <div id="boletin" class="newsletter"></div>
+    </div>
+    <div class="copyright">
+        <p>Desarrollado por Ailen Gonzalez &copy; 2024</p>
+        <img src="img/payment.png" alt="Pagos">
+    </div>
+</footer>
+
+<script>
+    // Función para cargar el usuario desde el localStorage
+    function loadUser() {
+        const userEmailElement = document.getElementById('user-email');
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (loggedInUser) {
+            // Si el usuario está logueado, mostrar su correo en el popup
+            userEmailElement.textContent = loggedInUser.email;
+        } else {
+            // Si no está logueado, mostrar mensaje en el popup
+            userEmailElement.textContent = 'Iniciar sesión para realizar compra';
+        }
+    }
+
+    // Llamar a la función para cargar el usuario
+    loadUser();
+
+    // Event listener para el ícono de usuario
+    document.getElementById('user-icon').addEventListener('click', function () {
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (loggedInUser) {
+            // Si el usuario está logueado, mostrar un mensaje con su correo electrónico
+            alert('¡Bienvenido, ' + loggedInUser.email + '!');
+        } else {
+            // Si no está logueado, redirigir a la página de login
+            alert('Por favor, inicia sesión.');
+            window.location.href = 'login.html';
+        }
+    });
+
+    // Eliminar el usuario del localStorage al salir de la página
+    window.addEventListener('beforeunload', function () {
+        localStorage.removeItem('loggedInUser');
+    });
+
+    // Script para cargar los datos desde el archivo JSON
+    fetch('cafeteria.json')
+        .then(response => response.json())
+        .then(data => {
+            // Cargar Soporte al Cliente
+            const soporte = document.getElementById('soporte-cliente');
+            if (soporte && data.soporte_cliente) {
+                soporte.innerHTML = `
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="content-customer-support">
+                        <span class="text">${data.soporte_cliente.texto}</span>
+                        <span class="number">${data.soporte_cliente.telefono}</span>
+                    </div>
+                `;
+            }
+
+            // Cargar Menú
+            const menu = document.getElementById('menu');
+            if (menu && data.menu) {
+                data.menu.forEach(item => {
+                    menu.innerHTML += `<li><a href="${item.enlace}">${item.nombre}</a></li>`;
+                });
+            }
+
+            // Cargar Banner
+            const banner = document.getElementById('banner');
+            if (banner && data.banner) {
+                banner.innerHTML = `
+                    <p>${data.banner.titulo}</p>
+                    <h2>${data.banner.descripcion}</h2>
+                    <a href="${data.banner.enlace}">${data.banner.texto_boton}</a>
+                `;
+            }
+
+            // Cargar Contacto
+            const contacto = document.getElementById('contacto');
+            if (contacto && data.contacto) {
+                contacto.innerHTML = `
+                    <p class="title-footer">Información de Contacto</p>
+                    <ul>
+                        <li>Dirección: ${data.contacto.direccion}</li>
+                        <li>Teléfono: ${data.contacto.telefono}</li>
+                        <li>Email: ${data.contacto.email}</li>
+                    </ul>
+                `;
+            }
+
+            // Cargar Información
+            const informacion = document.getElementById('informacion');
+            if (informacion && data.informacion) {
+                informacion.innerHTML = `
+                    <p class="title-footer">Información</p>
+                    <ul>
+                        ${data.informacion.map(info => `<li><a href="${info.enlace}">${info.titulo}</a></li>`).join('')}
+                    </ul>
+                `;
+            }
+
+            // Cargar Mi Cuenta
+            const miCuenta = document.getElementById('mi-cuenta');
+            if (miCuenta && data.mi_cuenta) {
+                miCuenta.innerHTML = `
+                    <p class="title-footer">Mi Cuenta</p>
+                    <ul>
+                        ${data.mi_cuenta.map(cuenta => `<li><a href="${cuenta.enlace}">${cuenta.titulo}</a></li>`).join('')}
+                    </ul>
+                `;
+            }
+
+            // Cargar Boletín
+            const boletin = document.getElementById('boletin');
+            if (boletin && data.boletin) {
+                boletin.innerHTML = `
+                    <p class="title-footer">Boletín informativo</p>
+                    <div class="content">
+                        <p>${data.boletin.descripcion}</p>
+                    </div>
+                `;
+            }
+        })
+        .catch(error => console.error('Error al cargar el JSON:', error));
+
+    // Script para la barra lateral del carrito
+    const cartIcon = document.querySelector('.fa-basket-shopping');
+    const cartSidebar = document.createElement('div');
+    cartSidebar.id = 'cart-sidebar';
+    cartSidebar.style = `
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 350px;
+        height: 100vh;
+        background: #fdf6e3;
+        box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        overflow-y: auto;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        font-family: 'Poppins', sans-serif;
+    `;
+    document.body.appendChild(cartSidebar);
+
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'X';
+    closeButton.style = `
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: #b08968;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 30px;
+        font-weight: bold;
+    `;
+    cartSidebar.appendChild(closeButton);
+
+    cartIcon.addEventListener('click', (event) => {
+        event.stopPropagation(); // Evita que el evento se propague al documento
+        cartSidebar.style.right = '0';
+        cartSidebar.innerHTML = `
+            <button id="close-sidebar" style="
+                position: absolute; top: 10px; right: 15px; background: #b08968; color: #fff;
+                border: none; border-radius: 50%; width: 30px; height: 30px;
+                font-size: 18px; cursor: pointer; text-align: center; line-height: 30px; font-weight: bold;">X</button>
+            <h2 style="color: #6d4c41; border-bottom: 2px solid #b08968; text-align: center;">Tu Carrito</h2>
+            <ul style="padding: 0;">
+                <li style="background: #eddcd2; margin: 10px;">Producto 1</li>
+            </ul>`;
+        
+        // Agregar funcionalidad para el botón de cerrar
+        document.getElementById('close-sidebar').addEventListener('click', () => {
+            cartSidebar.style.right = '-350px';
+        });
+    });
+
+    // Detectar clic fuera de la barra lateral
+    document.addEventListener('click', (event) => {
+        const clickedElement = event.target;
+        if (!cartSidebar.contains(clickedElement) && clickedElement !== cartIcon) {
+            cartSidebar.style.right = '-350px'; // Oculta la barra lateral
+        }
+    });
+</script>
+
+    
+</body>
+
+</html>

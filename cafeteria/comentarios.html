@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baristas - Últimos Blogs</title>
+    <link rel="stylesheet" href="comentarios.css" />
+    <!-- Enlace al CDN de Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-hero">
+            <div class="container hero">
+                <div class="customer-support">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="content-customer-support">
+                        <span class="text">Soporte al cliente</span>
+                        <span class="number">1127834494</span>
+                    </div>
+                </div>
+
+                <div class="container-logo">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <h1 class="logo"><a href="/">Baristas</a></h1>
+                </div>
+
+                <div class="container-user">
+                    <i class="fa-solid fa-user"></i>
+                    <a href="carrito.html" class="fa-solid fa-basket-shopping"></a>
+                    <div class="content-shopping-cart">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <i class="fa-solid fa-bars"></i>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="login.html">Registrarse</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="comenta.html">Comentá</a></li>
+                    <li><a href="comentarios.html">Información</a></li>
+                </ul>
+
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Blogs -->
+    <main class="main-content">
+        <section class="container blogs">
+            <h1 class="heading-1">Últimos Blogs</h1>
+
+            <div class="container-blogs">
+                <!-- Blog 1 -->
+                <div class="card-blog">
+                    <div class="container-img">
+                        <img src="img/blog-1.jpg" alt="Imagen Blog 1" />
+                        <div class="button-group-blog">
+                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span><i class="fa-solid fa-link"></i></span>
+                        </div>
+                    </div>
+                    <div class="content-blog">
+                        <h3>Café para empezar tu día</h3>
+                        <span>29 Noviembre 2022</span>
+                        <p class="short-text">
+                            Consejos para preparar el mejor café en casa y empezar tu jornada con energía.
+                        </p>
+                        <p class="full-text" style="display:none;">
+                            Aquí puedes añadir más texto sobre el café para complementar el blog. Puedes hablar de tipos de café, métodos de preparación, beneficios, etc.
+                        </p>
+                        <div class="btn-read-more" onclick="toggleText(this)">Leer más</div>
+                    </div>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="card-blog">
+                    <div class="container-img">
+                        <img src="img/frapuchino.jpg" alt="Imagen Blog 2" />
+                        <div class="button-group-blog">
+                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span><i class="fa-solid fa-link"></i></span>
+                        </div>
+                    </div>
+                    <div class="content-blog">
+                        <h3>Recetas de frappuccinos</h3>
+                        <span>15 Diciembre 2022</span>
+                        <p class="short-text">
+                            Aprende a preparar deliciosos frappuccinos caseros para refrescarte en días calurosos.
+                        </p>
+                        <p class="full-text" style="display:none;">
+                            El frappuccino es una bebida refrescante y deliciosa. Aquí te contamos cómo hacerlos con diferentes sabores y combinaciones. ¡Te sorprenderás con lo fácil que es!
+                        </p>
+                        <div class="btn-read-more" onclick="toggleText(this)">Leer más</div>
+                    </div>
+                </div>
+                
+                <!-- Blog 3 -->
+                <div class="card-blog">
+                    <div class="container-img">
+                        <img src="img/blog-3.jpg" alt="Imagen Blog 3" />
+                        <div class="button-group-blog">
+                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span><i class="fa-solid fa-link"></i></span>
+                        </div>
+                    </div>
+                    <div class="content-blog">
+                        <h3>El origen del café</h3>
+                        <span>10 Enero 2023</span>
+                        <p class="short-text">
+                            Descubre la historia del café, desde su descubrimiento hasta cómo llegó a nuestras mesas.
+                        </p>
+                        <p class="full-text" style="display:none;">
+                            El café tiene una rica historia que se remonta a siglos atrás. Desde su descubrimiento en Etiopía hasta convertirse en la bebida más popular del mundo, el café ha recorrido un largo camino.
+                        </p>
+                        <div class="btn-read-more" onclick="toggleText(this)">Leer más</div>
+                    </div>
+                </div>
+                
+                <!-- Blog 4 -->
+                <div class="card-blog">
+                    <div class="container-img">
+                        <img src="img/cafe-beneficios.jpg" alt="Imagen Blog 4" />
+                        <div class="button-group-blog">
+                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span><i class="fa-solid fa-link"></i></span>
+                        </div>
+                    </div>
+                    <div class="content-blog">
+                        <h3>Beneficios del café</h3>
+                        <span>25 Febrero 2023</span>
+                        <p class="short-text">
+                            Explora los beneficios del café para tu salud y cómo consumirlo de manera responsable.
+                        </p>
+                        <p class="full-text" style="display:none;">
+                            El café es conocido por ser una excelente fuente de antioxidantes y tiene varios beneficios para la salud. Puede mejorar la concentración, la energía y tiene propiedades protectoras contra ciertas enfermedades.
+                        </p>
+                        <div class="btn-read-more" onclick="toggleText(this)">Leer más</div>
+                    </div>
+                </div>
+                
+                <!-- Blog 5 -->
+                <div class="card-blog">
+                    <div class="container-img">
+                        <img src="img/blog-2.jpg" alt="Imagen Blog 5" />
+                        <div class="button-group-blog">
+                            <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span><i class="fa-solid fa-link"></i></span>
+                        </div>
+                    </div>
+                    <div class="content-blog">
+                        <h3>Top cafeterías</h3>
+                        <span>12 Marzo 2023</span>
+                        <p class="short-text">
+                            Conoce las mejores cafeterías para disfrutar un café único en tu ciudad.
+                        </p>
+                        <p class="full-text" style="display:none;">
+                            Existen muchas cafeterías alrededor del mundo que ofrecen experiencias únicas. Desde lugares con café orgánico hasta aquellos que ofrecen una experiencia de café gourmet, ¡te contamos las mejores opciones!
+                        </p>
+                        <div class="btn-read-more" onclick="toggleText(this)">Leer más</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Baristas. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function toggleText(button) {
+            const content = button.closest('.content-blog'); // Obtiene el div con la clase content-blog
+            const shortText = content.querySelector('.short-text');
+            const fullText = content.querySelector('.full-text');
+    
+            if (fullText.style.display === 'none') {
+                fullText.style.display = 'block';
+                shortText.style.display = 'none';
+                button.textContent = 'Leer menos';
+            } else {
+                fullText.style.display = 'none';
+                shortText.style.display = 'block';
+                button.textContent = 'Leer más';
+            }
+        }
+    </script>
+</body>
+</html>

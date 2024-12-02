@@ -1,0 +1,19 @@
+{
+  "reviews": [
+    {
+      "name": "Juan Pérez",
+      "comment": "¡El café es excelente! Muy recomendado.",
+      "rating": 5
+    },
+    {
+      "name": "María López",
+      "comment": "Me encanta la atención al cliente. ¡Volveré!",
+      "rating": 4
+    },
+    {
+      "name": "Carlos García",
+      "comment": "El lugar es muy acogedor, pero el café podría mejorar.",
+      "rating": 3
+    }
+  ]
+}

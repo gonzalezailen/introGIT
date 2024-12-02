@@ -1,0 +1,51 @@
+[
+    {
+        "nombre": "Cafe Irish",
+        "precio_actual": 4.60,
+        "precio_anterior": 5.30,
+        "descuento": 13,
+        "imagen": "img/cafe-irish.jpg",
+        "estrellas": 4
+    },
+    {
+        "nombre": "Cafe Inglés",
+        "precio_actual": 5.70,
+        "precio_anterior": 7.30,
+        "descuento": 22,
+        "imagen": "img/cafe-ingles.jpg",
+        "estrellas": 3
+    },
+    {
+        "nombre": "Cafe Australiano",
+        "precio_actual": 3.20,
+        "precio_anterior": null,
+        "descuento": null,
+        "imagen": "img/cafe-australiano.jpg",
+        "estrellas": 5
+    },
+    {
+        "nombre": "Cafe Helado",
+        "precio_actual": 5.60,
+        "precio_anterior": null,
+        "descuento": null,
+        "imagen": "img/cafe-helado.jpg",
+        "estrellas": 4
+    },
+    {
+        "nombre": "Cafe Viena",
+        "precio_actual": 3.85,
+        "precio_anterior": 5.50,
+        "descuento": 30,
+        "imagen": "img/cafe-viena.jpg",
+        "estrellas": 5
+    },
+    {
+        "nombre": "Cafe Liqueurs",
+        "precio_actual": 5.60,
+        "precio_anterior": null,
+        "descuento": null,
+        "imagen": "img/cafe-liqueurs.jpg",
+        "estrellas": 4
+    }
+]
+
